@@ -15,7 +15,7 @@ spec:
 '''
 properties([
   parameters([
-    choice(choices: ['dev', 'qa', 'prod'], description: 'Choose an ENV from the list', name: 'environment'),
+    choice(choices: ['dev', 'qa','stage', 'prod'], description: 'Choose an ENV from the list', name: 'environment'),
     booleanParam(defaultValue: true, description: 'Do you want to apply?', name: 'command')
   ])
 ])
