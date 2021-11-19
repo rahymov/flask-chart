@@ -1,0 +1,5 @@
+name: flaskex
+replicas: 1
+image:
+  repository: rahymov/flaskex
+  tag: latest
