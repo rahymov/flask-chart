@@ -13,7 +13,12 @@ spec:
     - sleep
     - "100000"
 '''
-
+properties([
+  parameters([
+    choice(choices: ['dev', 'qa', 'prod'], description: 'Choose an ENV from the list', name: 'environment'),
+    booleanParam(defaultValue: true, description: 'Do you want to apply?', name: 'command')
+  ])
+])
 
 podTemplate(label: 'k8-tools', name: 'k8-tools', namespace: 'tools', yaml: podtemplate, showRawYaml: false) {
   node("k8-tools"){
